@@ -6,6 +6,11 @@ html {
   scroll-behavior: smooth;
 }
 
+section,
+main {
+  scroll-margin-top: 88px;
+}
+
 body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
@@ -14,7 +19,32 @@ body {
 }
 
 #dark-mode {
-  display: none;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}
+
+.skip-link {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  z-index: 10;
+  padding: 10px 14px;
+  border-radius: 8px;
+  background: #fff;
+  color: #1f2937;
+  transform: translateY(-150%);
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+:focus-visible,
+#dark-mode:focus-visible + .page .mode-button {
+  outline: 3px solid #f59e0b;
+  outline-offset: 3px;
 }
 
 .page {
@@ -445,8 +475,23 @@ footer {
 }
 
 @media (max-width: 820px) {
+  section,
+  main {
+    scroll-margin-top: 130px;
+  }
+
+  .header-content {
+    flex-wrap: wrap;
+    padding: 12px 0;
+    gap: 12px;
+  }
+
   nav {
-    display: none;
+    order: 3;
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px 20px;
   }
 
   .hero {
@@ -480,7 +525,25 @@ footer {
   }
 }
 
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
 @media (max-width: 600px) {
+  .brand {
+    font-size: 14px;
+  }
+
+  .mode-button {
+    font-size: 12px;
+  }
+
+  section {
+    padding: 50px 0;
+  }
+
   .hero h1 {
     font-size: 38px;
   }
