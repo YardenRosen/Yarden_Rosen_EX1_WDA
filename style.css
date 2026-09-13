@@ -19,10 +19,14 @@ body {
 }
 
 #dark-mode {
-  position: absolute;
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 1px;
   height: 1px;
+  margin: 0;
   opacity: 0;
+  clip-path: inset(50%);
 }
 
 .skip-link {
@@ -219,14 +223,13 @@ section {
 }
 
 .section-title > span {
-  color: #9ca3af;
+  color: #64748b;
   font-size: 13px;
   font-weight: bold;
   padding-top: 3px;
 }
 
-.section-title h2,
-.contact-box h2 {
+.section-title h2 {
   margin: 0;
   font-size: 32px;
   color: #111827;
@@ -399,7 +402,7 @@ section {
 }
 
 .contact-details span {
-  color: #9ca3af;
+  color: #64748b;
   font-size: 11px;
   text-transform: uppercase;
   font-weight: 700;
@@ -438,7 +441,6 @@ footer {
 
 #dark-mode:checked + .page .hero h1,
 #dark-mode:checked + .page .section-title h2,
-#dark-mode:checked + .page .contact-box h2,
 #dark-mode:checked + .page .brand,
 #dark-mode:checked + .page .project-card h3,
 #dark-mode:checked + .page .skill-card h3 {
@@ -467,6 +469,17 @@ footer {
 
 #dark-mode:checked + .page .contact-details strong {
   color: #f3f4f6;
+}
+
+#dark-mode:checked + .page .eyebrow,
+#dark-mode:checked + .page .project-label,
+#dark-mode:checked + .page .stat-card strong,
+#dark-mode:checked + .page .section-title > span {
+  color: #93c5fd;
+}
+
+#dark-mode:checked + .page .contact-details span {
+  color: #cbd5e1;
 }
 
 #dark-mode:checked + .page footer {

@@ -24,12 +24,19 @@ HTML5 and CSS3. The site uses no JavaScript, frameworks, or build tools.
 
 2. Open `index.html` in a web browser. No installation or server is required.
 
-The site also works when hosted as a static website, such as with GitHub Pages.
+## Publish with GitHub Pages
+
+After the final version is committed to `main` and pushed to GitHub, open the repository's **Settings → Pages**. Under **Build and deployment**, select **Deploy from a branch**, choose `main` and `/ (root)`, then save. Once GitHub finishes publishing, open the site and check that the profile image, navigation, and theme switch work.
+
+The expected site address is `https://yardenrosen.github.io/Yarden_Rosen_EX1_WDA/`. Use this link for submission only after the site is live.
+
+For the Moodle submission, include the repository link, the verified live site link, and a ZIP containing `index.html`, `style.css`, `assets/profile.png`, and this README.
 
 ## Project structure
 
 ```text
 .
+├── .gitignore          # Keeps the submission ZIP out of the website repository
 ├── index.html          # Page content and structure
 ├── style.css           # Layout, styling, and theme switching
 └── assets/
